@@ -1,5 +1,78 @@
+
+import libhex.libhex;
+import java.math.*;
+
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        /*тест 1*/
+        System.out.println("Тест 1");
+        BigInteger hex_1 = new BigInteger("ff00000000000000000000000000000000000000000000000000000000000000",16);
+        {System.out.print(hex_1.toString(16));
+        System.out.print("->(big endian)=");
+        libhex.HexToBig(hex_1);
+        System.out.print(hex_1.toString(16));
+        System.out.print("->(little endian)=");
+        libhex.HexToLittle(hex_1);}
+        BigInteger little_to_hex_1 = new BigInteger("255",10);
+        {System.out.print(little_to_hex_1.toString(10));
+        System.out.print("->(little to hex)=");
+        libhex.LittleToHex(little_to_hex_1,32);}
+        BigInteger big_to_hex_1 = new BigInteger("115339776388732929035197660848497720713218148788040405586178452820382218977280",10);
+        {System.out.print(big_to_hex_1.toString(10));
+        System.out.print("->(big to hex)=");
+        libhex.BigToHex(big_to_hex_1);}
+        /*тест 2*/
+        System.out.println("Тест 2");
+        BigInteger hex_2 = new BigInteger("aaaa000000000000000000000000000000000000000000000000000000000000",16);
+        {System.out.print(hex_2.toString(16));
+        System.out.print("->(big endian)=");
+        libhex.HexToBig(hex_2);
+        System.out.print(hex_2.toString(16));
+        System.out.print("->(little endian)=");
+        libhex.HexToLittle(hex_2);}
+        BigInteger little_to_hex_2 = new BigInteger("43690",10);
+        {System.out.print(little_to_hex_2.toString(10));
+            System.out.print("->(little to hex)=");
+            libhex.LittleToHex(little_to_hex_2,32);}
+        BigInteger big_to_hex_2 = new BigInteger("77193548260167611359494267807458109956502771454495792280332974934474558013440",10);
+        {System.out.print(big_to_hex_2.toString(10));
+            System.out.print("->(big to hex)=");
+            libhex.BigToHex(big_to_hex_2);}
+        /*тест 3*/
+        System.out.println("Тест 3");
+        BigInteger hex_3 = new BigInteger("FFFFFFFF",16);
+        {System.out.print(hex_3.toString(16));
+            System.out.print("->(big endian)=");
+            libhex.HexToBig(hex_3);
+            System.out.print(hex_3.toString(16));
+            System.out.print("->(little endian)=");
+            libhex.HexToLittle(hex_3);}
+        BigInteger little_to_hex_3 = new BigInteger("4294967295",10);
+        {System.out.print(little_to_hex_3.toString(10));
+            System.out.print("->(little to hex)=");
+            libhex.LittleToHex(little_to_hex_3,4);}
+        BigInteger big_to_hex_3 = new BigInteger("4294967295",10);
+        {System.out.print(big_to_hex_3.toString(10));
+            System.out.print("->(big to hex)=");
+            libhex.BigToHex(big_to_hex_3);}
+        /*тест 4*/
+        System.out.println("Тест 4");
+        BigInteger hex_4 = new BigInteger("F000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",16);
+        {System.out.print(hex_4.toString(16));
+            System.out.print("->(big endian)=");
+            libhex.HexToBig(hex_4);
+            System.out.print(hex_4.toString(16));
+            System.out.print("->(little endian)=");
+            libhex.HexToLittle(hex_4);}
+        BigInteger little_to_hex_4 = new BigInteger("240",10);
+        {System.out.print(little_to_hex_4.toString(10));
+            System.out.print("->(little to hex)=");
+            libhex.LittleToHex(little_to_hex_4,512);}
+
+        BigInteger big_to_hex_4 = new BigInteger("979114576324830475023518166296835358668716483481922294110218890578706788723335115795775136189060210944584475044786808910613350098299181506809283832360654948074334665509728123444088990750984735919776315636114949587227798911935355699067813766573049953903257414411690972566828795693861196044813729172123152193769005290826676049325224028303369631812105737593272002471587527915367835952474124875982077070337970837392460768423348044782340688207323630599527945406427226264695390995320400314062984891593411332752703846859640346323687201762934524222363836094053204269986087043470117703336873406636573235808683444836432453459818599293667760149123595668832133083221407128310342064668595954073131257995767262426534143159642539179485013975461689493733866106312135829807129162654188209922755829012304582671671519678313609748646814745057724363462189490278183457296449014163077506949636570237334109910914728582640301294341605533983878368789071427913184794906223657920124153256147359625549743656058746335124502376663710766611046750739680547042183503568549468592703882095207981161012224965829605768300297615939788368703353944514111011011184191740295491255291545096680705534063721012625490368756140460791685877738232879406346334603566914069127957053440",10);
+        {System.out.print(big_to_hex_4.toString(10));
+            System.out.print("->(big to hex)=");
+            libhex.BigToHex(big_to_hex_4);}
     }
 }
